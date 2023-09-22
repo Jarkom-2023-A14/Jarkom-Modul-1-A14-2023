@@ -127,3 +127,9 @@ Kita filter ip asal kita dan kita filter juga ip destinasinya (ip asal dan desti
    ![10_3](img/10_3.jpeg)  
    dan berbagai kredensial lainnya  
 5) Setelah dicoba satu persatu, didapatkan bahwa kredensial yang benar adalah ```dhafin:kesayangannyak0k0```
+
+---
+
+## Kendala
+- Pada soal 6, kami terlalu terfokus dengan cipher yang diberikan dan menghiraukan file pcapnya sendiri
+- Pada soal 10, kami hanya berpikir bahwa hanya terdapat 1 kredensial saja dari antara semua paket telnet (ddhhaaffiinn:kesayangannyak0k0)
