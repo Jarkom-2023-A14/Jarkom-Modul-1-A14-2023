@@ -6,9 +6,18 @@ Kelompok A14
 
 ## 1 User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file
 ### a Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut? 
-### b Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? 
+Kita dapat mendapatkan sequence number raw dengan filter protokolnya yaitu FTP dan mencari paket yang melakukan proses STOR *(ftp contains "STOR")*. Pada kasus ini adalah pada paket nomor 147 (Mengunggah c75-GrabThePhiser.zip). Kita buka detail paketnya dan lihat sequence numbernya, yaitu **258040667**.
+
+### b Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
+Kita dapat mendapatkan acknowledge number raw dengan filter protokolnya yaitu FTP dan mencari paket yang melakukan proses STOR *(ftp contains "STOR")*. Pada kasus ini adalah pada paket nomor 147 (Mengunggah c75-GrabThePhiser.zip). Kita buka detail paketnya dan lihat acknowledge numbernya, yaitu **1044861039**. 
+
 ### c Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+Kita cari packet yang melakukan response dari soal a dan b, yaitu pada packet no 149. Lalu kita lihat sequence numbernya seperti soal a dan b, yaitu **1044861039**
+
 ### d Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+Kita cari packet yang melakukan response dari soal a dan b, yaitu pada packet no 149. Lalu kita lihat acknowledge numbernya seperti soal a dan b, yaitu **258040696**
+
+
 
 ## 2 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 1) Buka file pcap dengan wireshark
@@ -26,6 +35,10 @@ Kelompok A14
    - Display filter tersebut merupakan gabungan semua kombinasi src-dst serta TCP-UDP
 
 Didapat bahwa terdapat 21 paket yang tercapture
+
+-- Aril
+Kita buka wireshark dan lakukan filter pada IP portal praktikum jarkom, yaitu dengan ip.dst == 10.21.78.111 dan Follow HTML. Lalu kita lahat pada web server yang digunakan. Untuk kasus diatas menggunakan gunicorn.
+
 ### b Protokol layer transport apa yang digunakan?
 Dari 21 paket yang tercapture, semua protokol yang digunakan adalah UDP
 
@@ -33,6 +46,9 @@ Dari 21 paket yang tercapture, semua protokol yang digunakan adalah UDP
 1) Buka file pcap dengan wireshark
 2) Cari paket 130, dan buka header filenya  
 Didapat bahwa checksum dari header pada paket 130 adalah ```0x18e5```
+
+-- Aril
+Kita lihat paket nomor 130 dan kita lihat checksumnya seperti pada gambar diatas.
 ## 5 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
 Soal tidak langsung tersedia, maka harus dilakukan sedikit investigasi terlebih dahulu  
 1) Buka file pcap dengan wireshark
@@ -62,9 +78,14 @@ IP server merupakan public IP dan berdasarkan capture sebelumnya, IP source keti
 8) Setelah dilakukan coba-coba, didapatkan bahwa jawaban yang benar adalah JDRNJA
 
 ## 7 Berapa jumlah packet yang menuju IP 184.87.193.88?
+Kita filter IP yang menuju dengan **ip.dst == 184.87.183.88** dan hitung berapa packet yang menuju kesana. Pada kasus kita ada **6 Paket** yang menuju ke ip tersebut
 
 ## 8 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
+Kita filter protocol nya yaitu tcp dan udp (sesuai abjad) dengan cara **tcp.dstport == 80 || udp.dstport == 80.** 
+
 
 ## 9 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+Kita filter ip asal kita dan kita filter juga ip destinasinya (ip asal dan destinasi sesuai query diatas) dengan cara **ip.src == 10.51.40.1 && ip.dst != 10.39.55.34**
+
 
 ## 10 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
