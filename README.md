@@ -36,19 +36,14 @@ Kita cari packet yang melakukan response dari soal a dan b, yaitu pada packet no
 
 Didapat bahwa terdapat 21 paket yang tercapture
 
--- Aril
-Kita buka wireshark dan lakukan filter pada IP portal praktikum jarkom, yaitu dengan ip.dst == 10.21.78.111 dan Follow HTML. Lalu kita lahat pada web server yang digunakan. Untuk kasus diatas menggunakan gunicorn.
-
 ### b Protokol layer transport apa yang digunakan?
 Dari 21 paket yang tercapture, semua protokol yang digunakan adalah UDP
 
 ## 4 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 1) Buka file pcap dengan wireshark
-2) Cari paket 130, dan buka header filenya  
+2) Cari paket 130, dan buka header filenya, cari bagian checksumnya  
 Didapat bahwa checksum dari header pada paket 130 adalah ```0x18e5```
 
--- Aril
-Kita lihat paket nomor 130 dan kita lihat checksumnya seperti pada gambar diatas.
 ## 5 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
 Soal tidak langsung tersedia, maka harus dilakukan sedikit investigasi terlebih dahulu  
 1) Buka file pcap dengan wireshark
