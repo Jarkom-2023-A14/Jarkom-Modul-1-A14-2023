@@ -73,7 +73,7 @@ IP server merupakan public IP dan berdasarkan capture sebelumnya, IP source keti
 8) Setelah dilakukan coba-coba, didapatkan bahwa jawaban yang benar adalah JDRNJA
 
 ## 7 Berapa jumlah packet yang menuju IP 184.87.193.88?
-Kita filter IP yang menuju dengan **ip.dst == 184.87.183.88** dan hitung berapa packet yang menuju kesana. Pada kasus kita ada **6 Paket** yang menuju ke ip tersebut
+Kita filter IP yang menuju dengan **ip.dst == 184.87.193.88** dan hitung berapa packet yang menuju kesana. Pada kasus kita ada **6 Paket** yang menuju ke ip tersebut
 
 ## 8 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 Kita filter protocol nya yaitu tcp dan udp (sesuai abjad) dengan cara **tcp.dstport == 80 || udp.dstport == 80.** 
