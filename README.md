@@ -84,3 +84,11 @@ Kita filter ip asal kita dan kita filter juga ip destinasinya (ip asal dan desti
 
 
 ## 10 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
+1) Buka file pcap dengan wireshark
+2) Lakukan display filter untuk paket yang menggunakan protokol telnet
+3) Cek isi data yang dikirim melalui telnet pada setiap paketnya, didapatkan daftar kredensial seperti berikut  
+   a) Paket 77 : adminajkganteng:dapinganteng  
+   b) Paket 81 : dhafin:kesayangannyak0k0  
+   c) Paket 85 : admin123:admin123  
+   dan berbagai kredensial lainnya  
+4) Setelah dicoba satu persatu, didapatkan bahwa kredensial yang benar adalah ```dhafin:kesayangannyak0k0```
